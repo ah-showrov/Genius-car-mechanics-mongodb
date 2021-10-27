@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 const ManageServices = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/services`;
+    const url = `https://pure-refuge-86420.herokuapp.com/services`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/services/${id}`, {
+    fetch(`https://pure-refuge-86420.herokuapp.com/services/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -6,12 +6,14 @@ const AddService = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/services", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Successfully Added");
-        reset();
-      }
-    });
+    axios
+      .post("https://pure-refuge-86420.herokuapp.com/services", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Successfully Added");
+          reset();
+        }
+      });
   };
   return (
     <div className="add-service">
